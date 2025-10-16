@@ -1,0 +1,26 @@
+{
+  "records": [
+    {
+      "id": "rec_0001",
+      "date": "2024-10-15",
+      "time": "06:30",
+      "location": {"lat": -4.0435, "lng": 39.6682},
+      "vessel_type": "dhow",
+      "fishing_method": "net",
+      "catch": {"total_kg": 45.5, "species": [{"name": "tuna", "kg": 30.0}, {"name": "snapper", "kg": 15.5}]},
+      "conditions": {"water_temp_c": 26.5, "tide": "high", "tide_height_m": 3.2, "moon_phase": "waxing_gibbous", "wind_speed_kmh": 15, "wind_direction": "NE", "wave_height_m": 1.2, "visibility_km": 8, "cloud_cover_pct": 40}
+    },
+    {
+      "id": "rec_0002",
+      "date": "2024-10-16",
+      "time": "07:10",
+      "location": {"lat": -3.996, "lng": 39.70},
+      "vessel_type": "canoe",
+      "fishing_method": "line",
+      "catch": {"total_kg": 18.2, "species": [{"name": "snapper", "kg": 10.2}, {"name": "reef_fish", "kg": 8.0}]},
+      "conditions": {"water_temp_c": 25.9, "tide": "mid", "tide_height_m": 2.2, "moon_phase": "first_quarter", "wind_speed_kmh": 22, "wind_direction": "E", "wave_height_m": 1.4, "visibility_km": 10, "cloud_cover_pct": 30}
+    }
+  ]
+}
+
+

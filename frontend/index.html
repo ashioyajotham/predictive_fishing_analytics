@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Predictive Fishing Analytics</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>Predictive Fishing Analytics</h1>
+      <p class="subtitle">Sustainable, data-driven decisions for coastal communities</p>
+    </header>
+
+    <main class="container grid">
+      <section class="card">
+        <h2>Current Conditions</h2>
+        <form id="conditions-form">
+          <div class="form-row">
+            <label for="timeOfDay">Time of Day</label>
+            <input type="number" id="timeOfDay" name="timeOfDay" min="0" max="23" value="6" required />
+          </div>
+          <div class="form-row">
+            <label for="waterTemp">Water Temp (°C)</label>
+            <input type="number" step="0.1" id="waterTemp" name="waterTemp" value="26.5" required />
+          </div>
+          <div class="form-row">
+            <label for="tideHeight">Tide Height (m)</label>
+            <input type="number" step="0.1" id="tideHeight" name="tideHeight" value="3.2" required />
+          </div>
+          <div class="form-row">
+            <label for="windSpeed">Wind Speed (km/h)</label>
+            <input type="number" id="windSpeed" name="windSpeed" value="15" required />
+          </div>
+          <div class="form-row">
+            <label for="waveHeight">Wave Height (m)</label>
+            <input type="number" step="0.1" id="waveHeight" name="waveHeight" value="1.2" required />
+          </div>
+          <div class="form-actions">
+            <button type="submit">Predict</button>
+            <button type="button" id="resetBtn" class="secondary">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Prediction</h2>
+        <div class="prediction-output">
+          <div>
+            <span class="label">Expected Catch (kg):</span>
+            <span id="predCatch">-</span>
+          </div>
+          <div>
+            <span class="label">Sustainability Score:</span>
+            <span id="sustainability">-</span>
+          </div>
+        </div>
+        <canvas id="trendChart" height="160"></canvas>
+      </section>
+    </main>
+
+    <footer class="container">
+      <small>Built with TensorFlow.js and Chart.js</small>
+    </footer>
+
+    <script src="assets/js/app.js" type="module"></script>
+  </body>
+  </html>
+
+
