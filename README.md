@@ -142,6 +142,6 @@ flake8
 
 ## License
 
-MIT
+tldr; MIT License. See [LICENSE](LICENSE) for details.
 
 
