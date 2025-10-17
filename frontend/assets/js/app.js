@@ -97,7 +97,13 @@ async function predictFromForm(event) {
   const form = event.currentTarget;
   const formData = new FormData(form);
   const inputs = {
-    timeOfDay: Number(formData.get("timeOfDay")),
+    timeOfDay: (() => {
+      const t = String(formData.get("time"));
+      // Expect HH:MM; fallback to 0 if parsing fails
+      const [hh, mm] = t.split(":").map((v) => Number(v));
+      if (Number.isFinite(hh) && Number.isFinite(mm)) return hh + mm / 60;
+      return 0;
+    })(),
     waterTemp: Number(formData.get("waterTemp")),
     tideHeight: Number(formData.get("tideHeight")),
     windSpeed: Number(formData.get("windSpeed")),
